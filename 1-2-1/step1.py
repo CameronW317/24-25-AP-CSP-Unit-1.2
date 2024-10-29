@@ -16,8 +16,10 @@ spot.fillcolor(spot_color)
 
 
 #-----game functions--------
-
+def spot_clicked(x,y):
+    print("Hello World!")
 
 #-----events----------------
+spot.onclick(spot_clicked)
 wn = trtl.Screen()
 wn.mainloop()
