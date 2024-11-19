@@ -16,9 +16,11 @@ ground_height = -200
 apple_letter_x_offset = -25
 apple_letter_y_offset = -50
 
+
 wn = trtl.Screen()
 wn.setup(width=1.0, height=1.0)
 wn.addshape(apple_image) # Make the screen aware of the new file
+
 
 wn.bgpic("background.gif")
 apple = trtl.Turtle()
@@ -26,11 +28,14 @@ apple.penup()
 wn.tracer(False)
 
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+number_of_apples = len(letters)
 # given a turtle, active_apple, set that turtle to be shaped
 # by the image file
-def draw_apple(active_apple):
+def draw_apple(active_apple, letter):
   active_apple.shape(apple_image)
-  draw_letter("A", active_apple)
+  draw_letter(letter, active_apple)
+  apple.showturtle()
   wn.update()
 
 # This function moves the apple to the ground and hides it.
@@ -40,7 +45,7 @@ def drop_apple():
   apple.clear()
   apple.hideturtle()
   wn.tracer(False)
-
+  reset_apple(apple)
 
 
 #   a123_apple_letters.py
@@ -48,14 +53,20 @@ def drop_apple():
 # a new location on the tree, only if the list of letters is not empty. Associate the
 # turtle with a new letter selected at random from the list of letters
 
-def tree(apple):
+def reset_apple(apple):
   if len(letters) > 0:
     newX = rand.randint(-200, 200)
-    newY = apple.ycor()
-    new_letter = rand.choice(letters)
+    newY = 0
+    new_letter = rand.randint(0, len(letters))
+    apple.goto(newX, newY)
+    draw_apple(apple,letters.pop(new_letter))
+
 
 #TODO Create a function that takes a turtle (apple) and its corresponding letter from the letter
 # list and draws that letter on that turtle (apple)
+
+
+
 
 #TODO Create a function that takes a turtle (apple) and its corresponding ltter from the letter
 # list and set that turtle to be shaped by the image file, call the letter drawing function,
@@ -66,7 +77,7 @@ def tree(apple):
 # add the new apples to a list of apples to be used in the rest of the program.
 # The loop below executes the correct number of times by using the range() function
 # to create a list of numbers to iterate over.
-for i in range(0, number_of_apples):
+#for i in range(0, number_of_apples):
   #Your code here
 
 #TODO Create a function that takes a letter as its parameter, uses that letter to retrieve the
@@ -94,8 +105,8 @@ def draw_letter(letter, active_apple):
   active_apple.write(letter, font=("Arial", 74, "bold"))
   active_apple.setpos(remember_position)
 
-draw_apple(apple)
-wn.onkeypress(drop_apple, "a")
+draw_apple(apple, "A")
+wn.onkeypress(drop_apple, 'a')
 
 wn.listen()
 trtl.mainloop()
