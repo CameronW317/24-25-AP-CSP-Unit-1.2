@@ -8,7 +8,7 @@ maze_painter = t.Turtle()
 path_width = 30
 wall_color = "black"
 wall_length = 35
-barrier_length = (path_width * 2)
+
 
 
 
@@ -36,14 +36,17 @@ def draw_barrier():
     maze_painter.left(90)
 
 for wall in range(21):
-    first_length = wall_length / rand.randint(1, 3)
-    maze_painter.forward(first_length)
+    gap_space = rand.randint(0, wall_length - path_width)
+    door_space = 0
+    maze_painter.forward(gap_space)
     maze_painter.penup()
     maze_painter.forward(path_width)
     maze_painter.pendown()
     if(wall > 5):
+        door_space = rand.randint(0, wall_length - path_width - gap_space)
+        maze_painter.forward(door_space)
         draw_barrier()
-    maze_painter.forward(wall_length - path_width - first_length)
+    maze_painter.forward(wall_length - gap_space - path_width - door_space)
     maze_painter.left(90)
     wall_length += 15
 
