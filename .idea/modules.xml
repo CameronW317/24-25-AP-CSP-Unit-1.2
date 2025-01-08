@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../24-25-AP-CSP-Unit-1/.idea/24-25-AP-CSP-Unit-1.iml" filepath="$PROJECT_DIR$/../24-25-AP-CSP-Unit-1/.idea/24-25-AP-CSP-Unit-1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/24-25-AP-CSP-Unit-1.2.iml" filepath="$PROJECT_DIR$/.idea/24-25-AP-CSP-Unit-1.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../25WeissPapaleo/.idea/25WeissPapaleo.iml" filepath="$PROJECT_DIR$/../25WeissPapaleo/.idea/25WeissPapaleo.iml" />
     </modules>
   </component>
 </project>

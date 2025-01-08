@@ -4,5 +4,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="24-25-AP-CSP-Unit-1" />
+    <orderEntry type="module" module-name="25WeissPapaleo" />
   </component>
 </module>
