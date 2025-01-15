@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../24-25-AP-CSP-Unit-1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../24-25APCSP_Unit2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../25Weiss" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../25WeissPapaleo" vcs="Git" />
   </component>
 </project>
